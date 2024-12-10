@@ -1,0 +1,9 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "urls" (
+	"short"	TEXT NOT NULL UNIQUE,
+	"long"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("short")
+);
+DELETE FROM sqlite_sequence;
+COMMIT;
