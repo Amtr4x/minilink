@@ -2,8 +2,7 @@ import { db } from '$lib/server/db/index.js';
 import * as schema from '$lib/server/db/schema.js';
 import { error, redirect } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
-
-const URL_LENGTH = 25;
+import { URL_LENGTH } from '$lib';
 
 /**
  * Redirect the user if the provided pathname inside
