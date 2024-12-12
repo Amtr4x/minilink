@@ -13,7 +13,7 @@ export const actions = {
 		const short = nanoid(URL_LENGTH);
 
 		try {
-			if (long) {
+			if (long.startsWith('http://') || long.startsWith('https://')) {
 				await db.insert(urls).values({ short: short, long: long }).onConflictDoNothing();
 				const savedShort = await db
 					.select({ short: urls.short })
