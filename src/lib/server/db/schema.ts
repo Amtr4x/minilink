@@ -1,6 +1,6 @@
 import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
-export const shortlinks = sqliteTable('urls', {
-	short: text('short').primaryKey(),
-	long: text('long')
+export const urls = sqliteTable('urls', {
+	short: text('short').primaryKey().unique(),
+	long: text('long').unique()
 });
